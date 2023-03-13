@@ -1,0 +1,31 @@
+{
+  "name": "birlik-service-backend",
+  "version": "1.0.0",
+  "description": "school accounting system",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
+  },
+  "keywords": [],
+  "author": "Alibek Seitov",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-validator": "^6.15.0",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.21",
+    "pg-hstore": "^2.3.4",
+    "postgres-pool": "^7.0.0",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0"
+  }
+}

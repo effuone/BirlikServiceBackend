@@ -1,0 +1,9 @@
+DROP TABLE projects_documents;
+DROP TABLE projects;
+DROP TABLE certificates_documents;
+DROP TABLE certificates;
+DROP TABLE staffs;
+DROP TABLE user_specializations;
+DROP TABLE users;
+DROP TABLE specializations;
+DROP TABLE documents;
