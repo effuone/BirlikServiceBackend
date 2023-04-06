@@ -29,7 +29,8 @@ CREATE TABLE user_specializations (
 CREATE TABLE staffs (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    resume_id INT REFERENCES documents (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    resume_id INT REFERENCES documents (id) ON UPDATE CASCADE ON DELETE CASCADE, 
+    pedagogical_excellence INT NOT NULL,
     progress_plan TEXT NOT NULL
 );
 

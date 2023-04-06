@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import { allowCrossDomain } from "./middlewares";
 import { routes } from "./routes";
-import path from 'path'
+import { removeSpacesBetweenWords } from "./utils/removeSpacesBetweenWords";
 const PORT = process.env.PORT;
 const app = express();
 

@@ -7,17 +7,7 @@ import databaseContext from '../database/databaseContext';
 import * as fs from 'fs/promises'
 
 const generateAccessToken = (credentials)=> {
-    const id = credentials.id
-    const role = credentials.role
-    const userName = credentials.username
-    const firstName = credentials.first_name
-    const lastName = credentials.last_name
-    const email = credentials.email
-    const phone = credentials.phone_number
-    const payload = {
-        id, role, userName, firstName, lastName, email, phone
-    }
-    return jwt.sign(payload, process.env.JWT_KEY, {expiresIn:'24h'})
+    return jwt.sign({...credentials}, process.env.JWT_KEY, {expiresIn:'24h'})
 }
 
 class UserController {
@@ -39,16 +29,6 @@ class UserController {
                 'VALUES ($1,$2,$3,$4,$5,$6, $7) RETURNING *'
             , [username, firstName, lastName, email, hashPassword, phoneNumber, position])
             await databaseContext.query('INSERT INTO user_specializations (user_id, specialization_id) values ($1,$2) RETURNING *', [newUser.rows[0].id, 1])
-            // const verificationLink = `${process.env.WEBAPP_URL}confirmEmail/${(newUser.rows[0]).id}`
-            // const emailHtml1 = await fs.readFile('./services/emailVerification1.html', {encoding:"utf8"}) 
-            // const emailHtml2 = await fs.readFile('./services/emailVerification2.html', {encoding:"utf8"}) 
-            // sendEmail(
-            //     email, 
-            //     "Birlik Service service email verification", 
-            //     "Confirm", 
-            //     emailHtml1+verificationLink+emailHtml2
-            // )
-            // return res.json({message: "User created successfully! Confirm your email."})
             return res.json({message: "User created successfully!"})
         }catch(e){
             console.log(e)

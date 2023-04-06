@@ -5,10 +5,6 @@ const databaseContext = new Pool( {
     ssl:{
         rejectUnauthorized: false
     }
-    // database: process.env.DATABASE_NAME,
-    // port: process.env.DATABASE_PORT,
-    // password: process.env.DATABASE_PASSWORD,
-    // user: process.env.DATABASE_USER
 });
 
 export default databaseContext

@@ -3,8 +3,6 @@ import fs from 'fs'
 
 const projectsDirectory = `${process.cwd()}/documents/projects`
 
-let upload = multer({dest: projectsDirectory})
-
 class ProjectController{
     async createProject(req,res){
         try{    
